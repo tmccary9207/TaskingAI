@@ -330,5 +330,6 @@
     "subMenuItemsTextActions": "アクション",
     "tryTaskingAICloud": "TaskingAI Cloudを試す",
     "projectHomeTitle": "ホーム",
-    "projectForumTitle": "フォーラム"
+    "projectForumTitle": "フォーラム",
+    "connectionFailed":  "接続に失敗しました。もう一度お試しください。"
 }

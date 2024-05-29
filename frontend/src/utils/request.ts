@@ -1,5 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
+import i18n from 'i18next';
 const request = axios.create({
   baseURL: "/",
   timeout: 60000,
@@ -25,7 +26,7 @@ request.interceptors.response.use(
     console.log(error);
     const location = window.location.href;
     if (!error.response) {
-      toast.error("Connection failed. Please retry.");
+      toast.error(i18n.t('connectionFailed'));
     }
     if (
       error.response.status === 401 &&

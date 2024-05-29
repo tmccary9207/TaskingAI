@@ -330,5 +330,6 @@
     "subMenuItemsTextActions": "Actions",
     "tryTaskingAICloud": "Try TaskingAI Cloud",
     "projectHomeTitle": "Home",
-    "projectForumTitle": "Forum"
+    "projectForumTitle": "Forum",
+    "connectionFailed":  "Connection failed. Please retry."
 }
