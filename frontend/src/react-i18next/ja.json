@@ -331,5 +331,13 @@
     "tryTaskingAICloud": "TaskingAI Cloudを試す",
     "projectHomeTitle": "ホーム",
     "projectForumTitle": "フォーラム",
-    "connectionFailed":  "接続に失敗しました。もう一度お試しください。"
+    "connectionFailed":  "接続に失敗しました。もう一度お試しください。",
+    "keyReverseValueHome": "ホーム",
+    "keyReverseValueModels": "モデル",
+    "keyReverseValueAssistants": "アシスタント",
+    "keyReverseValueRetrieval": "リトリーバル",
+    "keyReverseValuePlayground": "プレイグラウンド",
+    "keyReverseValuePlugins": "プラグイン",
+    "keyReverseValueActions": "アクション",
+    "keyReverseValueAPI Keys": "APIキー"
 }

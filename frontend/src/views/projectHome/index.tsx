@@ -185,7 +185,7 @@ const ProjectHome = () => {
                 </div>}
                 <div className="right-header">
                     <div style={{ height: '100%', display: 'flex', alignItems: 'center' }}>
-                        <span style={{ lineHeight: 1 }}>{keyReverseValue[key]}</span>
+                        <span style={{ lineHeight: 1 }}>{t(`keyReverseValue${keyReverseValue[key]}`)}</span>
                         {keyReverseValue[key] === 'Playground' && <Select value={playgroundType} style={{ marginLeft: '10px', width: '155px' }} defaultValue='assistant' onChange={handleChangePlaygroundModel} options={[{ value: 'chat_completion', label: t('projectPlaygroundChatCompletion') }, { value: 'assistant', label: t('projectAssistant') }]}></Select>}
                     </div>
 

@@ -331,5 +331,13 @@
     "tryTaskingAICloud": "Try TaskingAI Cloud",
     "projectHomeTitle": "Home",
     "projectForumTitle": "Forum",
-    "connectionFailed":  "Connection failed. Please retry."
+    "connectionFailed":  "Connection failed. Please retry.",
+    "keyReverseValueHome": "Home",
+    "keyReverseValueModels": "Models",
+    "keyReverseValueAssistants": "Assistants",
+    "keyReverseValueRetrieval": "Retrieval",
+    "keyReverseValuePlayground": "Playground",
+    "keyReverseValuePlugins": "Plugins",
+    "keyReverseValueActions": "Actions",
+    "keyReverseValueAPI Keys": "API Keys"
 }
