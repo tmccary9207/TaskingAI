@@ -322,5 +322,8 @@
     "deleteSuccessful": "Delete successful",
     "passwordReset": "Password reset",
     "signinSuccessful": "Sign in successful",
-    "signupSuccessful": "Sign up successful"
+    "signupSuccessful": "Sign up successful",
+    "pageNotFound": "Page Not Found",
+    "backHome": "Back Home",
+    "pageDoesNotExistOrMoved": "The page you are looking for doesn’t exist or has been moved"
 }

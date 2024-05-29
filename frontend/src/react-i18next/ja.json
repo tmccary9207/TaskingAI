@@ -322,5 +322,8 @@
     "deleteSuccessful": "削除に成功しました",
     "passwordReset": "パスワードを再設定",
     "signinSuccessful": "サインインに成功しました",
-    "signupSuccessful": "サインアップに成功しました"
+    "signupSuccessful": "サインアップに成功しました",
+    "pageNotFound": "ページが見つからない",
+    "backHome": "ホームに戻る",
+    "pageDoesNotExistOrMoved": "探しているページは存在しないまたは移動しました。"
 }
