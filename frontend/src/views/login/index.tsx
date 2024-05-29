@@ -7,17 +7,19 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import style from './login.module.scss'
 import { fetchLogin } from '@/axios/index'
+import { useTranslation } from 'react-i18next';
 
 function Login() {
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
+    const { t } = useTranslation();
     const onFinish = async (val: object) => {
         setLoading(true)
         try {
             const res = await fetchLogin(val)
             localStorage.setItem('token', res.data.token)
             await navigate('/project/home')
-            toast.success('Signin successful')
+            toast.success(t('signinSuccessful'))
         } catch (error) {
             toast.error(error.response.data.error.message)
         }
@@ -30,33 +32,33 @@ function Login() {
                     <img src={aiIcon} alt="social-icon"></img>
                     <Beta style={{ marginLeft: '12px' }} />
                 </div>
-                <div className={style["welcome-font"]}>Welcome back</div>
+                <div className={style["welcome-font"]}>{t('authWelcomeBack')}</div>
                 <Form layout="vertical" onFinish={onFinish}>
                     <Form.Item
-                        label="Username"
+                        label={t('authUsernameLabel')}
                         name="username"
                         rules={[
                             {
                                 required: true,
-                                message: 'Please input your username.',
+                                message: t('authUsernameMissingMessage'),
                             },
 
                         ]}
                     >
-                        <Input placeholder='Enter your username' className={style["input-edit"]} />
+                        <Input placeholder={t('authUsernamePlaceholder')} className={style["input-edit"]} />
                     </Form.Item>
 
                     <Form.Item
-                        label="Password"
+                        label={t('authPassword')}
                         name="password"
                         rules={[
                             {
                                 required: true,
-                                message: 'Please input your password.',
+                                message: t('authPasswordMessage'),
                             },
                         ]}
                     >
-                        <Input placeholder="Enter your password" type="password" className={style["input-edit"]} />
+                        <Input placeholder={t('authEnterPassword')} type="password" className={style["input-edit"]} />
                     </Form.Item>
                     <div className={style.remember}>
 
@@ -68,7 +70,7 @@ function Login() {
                             className={style["submit-btn"]}
                             loading={loading}
                         >
-                            Sign in
+                            {t('authSignIn')}
                         </Button>
                     </Form.Item>
                 </Form>

@@ -1,5 +1,5 @@
 {
-    "authWelcomeBack": "おかえり",
+    "authWelcomeBack": "おかえりなさい",
     "authEmail": "メール",
     "authPassword": "パスワード",
     "authForgetPassword": "パスワードを忘れた",
@@ -33,6 +33,9 @@
     "authInputValidPassword": "8以上の大小文字と数字を入力する。",
     "authInputFirstName": "名を入力してください。",
     "authInputLastName": "姓を入力してください。",
+    "authUsernameLabel": "ユーザー名",
+    "authUsernameMissingMessage": "ユーザー名を入力してください。",
+    "authUsernamePlaceholder": "ユーザー名を入力する",
     "spaceProject": "全プロジェクト",
     "projectDocumentationTitle": "ドキュメンテーション",
     "projectSearch": "検索",
