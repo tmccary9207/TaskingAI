@@ -325,5 +325,10 @@
     "signupSuccessful": "Sign up successful",
     "pageNotFound": "Page Not Found",
     "backHome": "Back Home",
-    "pageDoesNotExistOrMoved": "The page you are looking for doesn’t exist or has been moved"
+    "pageDoesNotExistOrMoved": "The page you are looking for doesn’t exist or has been moved",
+    "subMenuItemsTextPlugins": "Plugins",
+    "subMenuItemsTextActions": "Actions",
+    "tryTaskingAICloud": "Try TaskingAI Cloud",
+    "projectHomeTitle": "Home",
+    "projectForumTitle": "Forum"
 }

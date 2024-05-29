@@ -325,5 +325,10 @@
     "signupSuccessful": "サインアップに成功しました",
     "pageNotFound": "ページが見つからない",
     "backHome": "ホームに戻る",
-    "pageDoesNotExistOrMoved": "探しているページは存在しないまたは移動しました。"
+    "pageDoesNotExistOrMoved": "探しているページは存在しないまたは移動しました。",
+    "subMenuItemsTextPlugins": "プラグイン",
+    "subMenuItemsTextActions": "アクション",
+    "tryTaskingAICloud": "TaskingAI Cloudを試す",
+    "projectHomeTitle": "ホーム",
+    "projectForumTitle": "フォーラム"
 }
