@@ -400,7 +400,7 @@ function ModalTable({ columns, ifAllowNew,title, hangleFilterData,isShowNewCreat
                 <div className={styles['header-table']}>
                     <Select defaultValue={'ID' } onChange={handleSelectFrontChange} options={ifOnlyId ? optionsFront1 : optionsFront} className={styles['select-name']} />
                     <Input placeholder={enterPlaceHolder} className={styles['input-name']} onChange={handleInputChange} value={inputValue} />
-                    <Button className='cancel-button' onClick={handleSearch}>Search</Button>
+                    <Button className='cancel-button' onClick={handleSearch}>{t('searchButton')}</Button>
                     {(ifSelect && mode === 'multiple') && <Select defaultValue="All Records" onChange={handleSelectEndChange} options={optionsEnd} className={styles['select-data']} />}
                     {!ifSelect && (
                         <div className={styles['header-new']}>

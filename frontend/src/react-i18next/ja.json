@@ -366,5 +366,6 @@
     "dashboardClientLibrariesBlurb": "プロジェクトを始めるためにクライエントライブラリーを選択する。",
     "comingSoon": "近刊",
     "previousButton": "前へ",
-    "nextButton": "次へ"
+    "nextButton": "次へ",
+    "searchButton": "検索"
 }
