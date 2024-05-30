@@ -43,13 +43,13 @@ const DrawerAssistant = forwardRef((props: any, ref: any) => {
         setSelectedPluginList(selectedPluginGroup)
     }, [selectedPluginGroup])
     useEffect(() => {
-        if(drawerTitle === 'Create Assistant' && openDrawer) {
+        if(drawerTitle === t('projectAssistantCreateTitle') && openDrawer) {
             setSelectedPluginList([]) 
             setActionSelectedList([])
             setRetrievalSelectedList([])
             setPluginActionList([])
             setRetrievalFormList([''])
-        } else if(drawerTitle === 'Edit Assistant' && openDrawer) {
+        } else if(drawerTitle === t('projectEditAssistant') && openDrawer) {
             const retrievalFormList1 = selectedCollectionList.map((item: any) => ({ collection_id: item.collection_id,name: item.name })).length > 0 ? selectedCollectionList.map((item: any) => ({ collection_id: item.collection_id,name: item.name })) : ['']
             setRetrievalSelectedList(retrievalFormList1)
             setRetrievalFormList(retrievalFormList1)
@@ -282,9 +282,9 @@ const DrawerAssistant = forwardRef((props: any, ref: any) => {
                     {t('projectAssistantsColumnDescription')}
                 </div>
                 <div className='label-desc'>
-                The description should serve as an internal note to clarify the purpose of the assistant; it will not be used as a system prompt.
+                    {t('projectAssistantCreateDesc')}
                 </div>
-                <Input.TextArea placeholder='Enter description' className='input' autoSize={{ minRows: 3, maxRows: 10 }} showCount
+                <Input.TextArea placeholder={t('projectAssistantEnterDescription')} className='input' autoSize={{ minRows: 3, maxRows: 10 }} showCount
                     maxLength={200} value={drawerDesc} onChange={(e) => handleDescriptionChanges(e as any)} />
                 <div className='hr'></div>
                 <div className='label'>
@@ -306,9 +306,9 @@ const DrawerAssistant = forwardRef((props: any, ref: any) => {
                 <div className='label'>
                     <span>{t('projectSystemPromptTemplate')}</span>
                 </div>
-                <div className='label-desc'>A system prompt is the initial instruction that guides assistant’s response.  Prompt variables can be defined using double curly brackets, like {"{{language}}"}. Those variables are then populated during the generation process. 
+                <div className='label-desc'>{t('projectAssistantSystemPromptDescriptionPart1')}{"{{language}}"}{t('projectAssistantSystemPromptDescriptionPart2')}
                 &nbsp;<a className='referToTheDocumentationFor href' href="https://docs.tasking.ai/docs/guide/product_modules/assistant/components/system-prompt-template" target="_blank">
-                        <span className='referToThe'>Learn more</span>
+                        <span className='referToThe'>{t('projectAssistantLearnMore')}</span>
                     </a>
                 </div>
                 {systemPromptTemplate?.map((value: any, index: number) => (
@@ -323,7 +323,7 @@ const DrawerAssistant = forwardRef((props: any, ref: any) => {
                         <DeleteInputIcon onClick={() => handleDeletePromptInputs(index)} style={{ marginTop: '8px' }} /></div>
                 ))}
                 <div className='add-bottom'>
-                    <Button onClick={handleAddPrompt} disabled={systemPromptTemplate.length === 10} icon={<PlusOutlined />}>Add</Button>
+                    <Button onClick={handleAddPrompt} disabled={systemPromptTemplate.length === 10} icon={<PlusOutlined />}>{t('addButtonLabel')}</Button>
                     <span>{systemPromptTemplate.length}/10</span>
                 </div>
                 <div className='hr'></div>
@@ -332,13 +332,13 @@ const DrawerAssistant = forwardRef((props: any, ref: any) => {
                     <span>{t('projectAssistantsColumnMemory')}</span>
 
                 </div>
-                <div className='label-desc'>The context memory allows the assistant to remember past conversations, thereby enabling stateful invocations. 
+                <div className='label-desc'>{t('projectAssistantContextMemoryDescription')} 
                 &nbsp;<a className='referToTheDocumentationFor href'   href="https://docs.tasking.ai/docs/guide/product_modules/assistant/components/memory" target="_blank">
-                         <span className='referToThe'>Learn more</span>
+                         <span className='referToThe'>{t('projectAssistantLearnMore')}</span>
                     </a>
                 </div>
                 <div className='memory-type'>
-                    <Button className='button-type' >Type</Button>
+                    <Button className='button-type' >{t('projectAssistantMemoryType')}</Button>
                     <Select
                         onChange={handleMemoryChange}
                         value={memoryValue}
@@ -347,15 +347,15 @@ const DrawerAssistant = forwardRef((props: any, ref: any) => {
                         options={[
                             {
                                 value: 'message_window',
-                                label: 'Message Window',
+                                label: t('projectAssistantContextMemoryOptionMessageWindow'),
                             },
                             {
                                 value: 'zero',
-                                label: 'Zero',
+                                label: t('projectAssistantContextMemoryOptionZero'),
                             },
                             {
                                 value: 'naive',
-                                label: 'Naive',
+                                label: t('projectAssistantContextMemoryOptionNaive'),
                             }
 
                         ]}>
@@ -364,19 +364,19 @@ const DrawerAssistant = forwardRef((props: any, ref: any) => {
                 {
                     memoryValue === 'message_window' && <div className='input-double'>
                         <div className='input-children'>
-                            <Button className='button-type' >Max messages</Button>
+                            <Button className='button-type' >{t('projectAssistantMaxMessagesLabel')}</Button>
                             <InputNumber
                                 parser={(value: any) => (isNaN(value) ? 1 : parseInt(value, 10))}
                                 min={1}
                                 max={128}
-                                placeholder='From 1 to 128'
+                                placeholder={t('projectAssistantMaxMessagePlaceholder')}
                                 value={inputValue1}
                                 onChange={(value) => handleInputValue1(value as number)}
                             />
                         </div>
                         <div className='input-children1'>
-                            <Button className='button-type' >Max tokens</Button>
-                            <InputNumber parser={(value: any) => (isNaN(value) ? 1 : parseInt(value, 10))} min={1} max={8192} placeholder='From 1 to 8192' value={inputValue2} onChange={(e) => handleInputValue2(e as number)}></InputNumber>
+                            <Button className='button-type' >{t('projectAssistantMaxTokensLabel')}</Button>
+                            <InputNumber parser={(value: any) => (isNaN(value) ? 1 : parseInt(value, 10))} min={1} max={8192} placeholder={t('projectAssistantMaxTokensPlaceholder')} value={inputValue2} onChange={(e) => handleInputValue2(e as number)}></InputNumber>
                         </div>
 
                     </div>
@@ -384,33 +384,33 @@ const DrawerAssistant = forwardRef((props: any, ref: any) => {
             </div>
             <div className='right-assistant'>
                 <div className='basic-information'>
-                    Integrations
+                    {t('projectAssistantIntegrations')}
                 </div>
                 <div className='desc-retrieval'>
                     {t('projectRetrievalTitle')}
                 </div>
                 <div className='label-desc'>
-                    Incorporate retrieval sources into your assistant to facilitate effective retrieval-augmented generation. <a href="https://docs.tasking.ai/docs/guide/product_modules/retrieval/overview" target='_blank'  className='referToTheDocumentationFor'>Learn more</a>
+                    {t('projectAssistantRetrievalDescription')} <a href="https://docs.tasking.ai/docs/guide/product_modules/retrieval/overview" target='_blank'  className='referToTheDocumentationFor'>{t('projectAssistantLearnMore')}</a>
                 </div>
                 {retrievalFormList.map((item: any, index: number) => (
                     <div className='retrieval-list' key={item.collection_id}>
                         <Select options={[
-                            { value: 'Collection', label: 'Collection' }
+                            { value: 'Collection', label: t('projectAssistantCollectionLabel') }
                         ]} defaultValue='Collection'   className='retrieval-type'></Select>
                         <Select className='input' mode="multiple" placeholder={!item.name && t('projectAssistantRetrievalPlaceHolder')} style={{caretColor:'transparent'}} onClick={() => handleCollectionModal(index, item.collection_id)} suffixIcon={<RightOutlined />} open={false} value={item.name ? item.name : undefined} removeIcon={null} />
                         <div> <DeleteInputIcon onClick={() => handleDeleteRetrieval(item.collection_id,index)} style={{ marginTop: '8px' }} /></div>
                     </div>
                 ))}
                 <div className={`add-bottom ${retrievalFormList.length === 10 && 'disabled-button'}`} >
-                    <Button onClick={handleAddRetrieval} disabled={retrievalFormList.length === 10} icon={<PlusOutlined />}>Add</Button>
+                    <Button onClick={handleAddRetrieval} disabled={retrievalFormList.length === 10} icon={<PlusOutlined />}>{t('addButtonLabel')}</Button>
                     <span>{retrievalFormList.length}/10</span>
                 </div>
                 {isShowRetrievalConfig && <>
                     <div className='desc-retrieval' style={{ marginBottom: '12px' }}>
-                        Retrieval Configs
+                        {t('retrievalConfigs')}
                     </div>
                     <div className='memory-type'>
-                        <Button className='button-type' >Method</Button>
+                        <Button className='button-type' >{t('methodLabel')}</Button>
                         <Select
                             onChange={handleRetrievalConfigChange}
                             value={retrievalConfig}
@@ -422,11 +422,11 @@ const DrawerAssistant = forwardRef((props: any, ref: any) => {
                                 },
                                 {
                                     value: 'user_message',
-                                    label: 'User Message',
+                                    label: t('userMessageLabel'),
                                 },
                                 {
                                     value: 'memory',
-                                    label: 'Memory',
+                                    label: t('memoryLabel'),
                                 }
                             ]}>
                         </Select>
@@ -438,14 +438,14 @@ const DrawerAssistant = forwardRef((props: any, ref: any) => {
                                 parser={(value: any) => (isNaN(value) ? 1 : parseInt(value, 10))}
                                 min={1}
                                 max={128}
-                                placeholder='From 1 to 20'
+                                placeholder={t('projectAssistantTopKPlaceholder')}
                                 value={topk}
                                 onChange={(value) => handleTopk(value as number)}
                             />
                         </div>
                         <div className='input-children1'>
-                            <Button className='button-type' >Max tokens</Button>
-                            <InputNumber parser={(value: any) => (isNaN(value) ? 1 : parseInt(value, 10))} min={1} max={8192} placeholder='From 1 to 8192' value={maxTokens} onChange={(e) => handleMaxTokens(e as number)}></InputNumber>
+                            <Button className='button-type' >{t('projectAssistantMaxTokensLabel')}</Button>
+                            <InputNumber parser={(value: any) => (isNaN(value) ? 1 : parseInt(value, 10))} min={1} max={8192} placeholder={t('projectAssistantMaxTokensPlaceholder')} value={maxTokens} onChange={(e) => handleMaxTokens(e as number)}></InputNumber>
                         </div>
 
                     </div>
@@ -453,20 +453,20 @@ const DrawerAssistant = forwardRef((props: any, ref: any) => {
 
                 <div className='hr'></div>
                 <div className='desc-retrieval'>
-                    Tools
+                    {t('projectAssistantToolsLabel')}
                 </div>
                 <div className='label-desc'>
-                    Integrate tools into your assistant to extend its capabilities to address different user needs. <a href="https://docs.tasking.ai/docs/guide/product_modules/tool/overview" target='_blank' className='referToTheDocumentationFor'> Learn more</a>
+                    {t('projectAssistantToolsDescription')} <a href="https://docs.tasking.ai/docs/guide/product_modules/tool/overview" target='_blank' className='referToTheDocumentationFor'> {t('projectAssistantLearnMore')}</a>
                 </div>
                 {pluginActionList.map((item: any, index: number) => {
                     return (
                         <div className='retrieval-list'>
                             <Select options={[
-                                { value: 'plugin', label: 'Plugin' },
-                                { value: 'action', label: 'Action' }
+                                { value: 'plugin', label: t('pluginLabel') },
+                                { value: 'action', label: t('actionLabel') }
                             ]} defaultValue='plugin' className='retrieval-type' onChange={(value) => handleToolsChange(value, index, item)} value={item.type}></Select>
                             <Select
-                                placeholder={item.type === 'plugin' ? 'Select a plugin' : 'Select a action'}
+                                placeholder={item.type === 'plugin' ? t('selectPluginPlaceholder') : t('selectActionPlaceholder')}
                                 open={false}
                                 removeIcon={null}
                                 mode="multiple"
@@ -481,12 +481,12 @@ const DrawerAssistant = forwardRef((props: any, ref: any) => {
                     )
                 })}
                 <div style={{ marginBottom: '24px' }} className={`add-bottom ${pluginActionList.length === 10 && 'disabled-button'}`} >
-                    <Button onClick={handleAddTool} disabled={pluginActionList.length === 10} icon={<PlusOutlined />}>Add</Button>
+                    <Button onClick={handleAddTool} disabled={pluginActionList.length === 10} icon={<PlusOutlined />}>{t('addButtonLabel')}</Button>
                     <span>{pluginActionList.length}/10</span>
                 </div>
             </div>
-            {collectionModal && <ModalSelect collectionSelectedId={collectionSelectedId} id='collection_id' handleNewModal={handleNewCollection1} title='Collection' nameTitle='Select Collection' newTitle={t('projectRetrievalNew')} hasMore={collectionHasMore} handleSelectedItem={handleSelectedItem} retrievalModal={collectionModal} retrievalSelectedList={retrievalSelectedList} retrievalList={retrievalList} handleClose={handleCancelCollectionModal}></ModalSelect>}
-            {actionModal && <ModalSelect id='action_id' collectionSelectedId={actionSelectedId} nameTitle='Select Action' handleNewModal={handleNewAction} title='Action' newTitle={t('projectNewAction')} hasMore={actionHasMore} handleSelectedItem={handleActionItem} retrievalModal={actionModal} retrievalSelectedList={actionSelectedList} retrievalList={actionList} handleClose={handleCancelActionModal}></ModalSelect>}
+            {collectionModal && <ModalSelect collectionSelectedId={collectionSelectedId} id='collection_id' handleNewModal={handleNewCollection1} title={t('projectAssistantCollectionLabel')} nameTitle={t('projectAssistantCollectionNameTitle')} newTitle={t('projectRetrievalNew')} hasMore={collectionHasMore} handleSelectedItem={handleSelectedItem} retrievalModal={collectionModal} retrievalSelectedList={retrievalSelectedList} retrievalList={retrievalList} handleClose={handleCancelCollectionModal}></ModalSelect>}
+            {actionModal && <ModalSelect id='action_id' collectionSelectedId={actionSelectedId} nameTitle={t('projectSelectAction')} handleNewModal={handleNewAction} title='Action' newTitle={t('projectNewAction')} hasMore={actionHasMore} handleSelectedItem={handleActionItem} retrievalModal={actionModal} retrievalSelectedList={actionSelectedList} retrievalList={actionList} handleClose={handleCancelActionModal}></ModalSelect>}
             {pluginModal && <PluginComponent bundleSelectedItem={bundleSelectedItem} pluginSelectedId={pluginSelectedId}  selectedData={selectedPluginList} handleSelectedItem={handlePluginConfirm} open={pluginModal} handleCreateBundle={handleCreateBundle} bundleList={bundilesList} handleClose={handleClosePluginModal}></PluginComponent>}
         </div >
     );

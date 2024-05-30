@@ -13,9 +13,11 @@ import { modalGenerate } from '@/axios/playground'
 import { SSE } from "sse.js";
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
+import { useTranslation } from "react-i18next";
 const origin = window.location.origin;
 import IconComponent from '@/commonComponent/iconComponent/index.jsx';
 function PlaygroundModel() {
+    const { t } = useTranslation();
     const [loading, setLoading] = useState(false)
     const { search, pathname } = useLocation();
     const [selectedModel, setSelectedModel] = useState<any>([{
@@ -495,7 +497,7 @@ function PlaygroundModel() {
                                 <DeleteInputIcon onClick={() => handleDeletedata(index)} style={{ cursor: 'pointer' }} />
                             </div>
                         ))}
-                        <Button onClick={handleAddData} icon={<PlusOutlined />} style={{ marginTop: '12px', background: 'white' }}>Add</Button>
+                        <Button onClick={handleAddData} icon={<PlusOutlined />} style={{ marginTop: '12px', background: 'white' }}>{t('addButtonLabel')}</Button>
                     </div>
                     <div className={styles.generate}>
                         <Button className='next-button' onClick={handleGenerate} loading={generateLoading}>Generate</Button>

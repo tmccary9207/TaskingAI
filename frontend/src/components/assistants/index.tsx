@@ -96,7 +96,7 @@ function Assistant() {
     const [updateModelPrevButton, setUpdateModelPrevButton] = useState(false)
     const [selectedActionsRows, setSelectedActionsRows] = useState<any[]>([])
     const [OpenDeleteModal, setOpenDeleteModal] = useState(false)
-    const [drawerTitle, setDrawerTitle] = useState('Create Assistant')
+    const [drawerTitle, setDrawerTitle] = useState(t('projectAssistantCreateTitle'))
     const [drawerName, setDrawerName] = useState<any>('')
     const [hasActionMore, setHasActionMore] = useState(false)
     const [tipSchema, setTipSchema] = useState(false)
@@ -328,7 +328,7 @@ function Assistant() {
         setOptions(prevOptions => [...prevOptions]);
     }
     const handleCreatePrompt = () => {
-        setDrawerTitle('Create Assistant')
+        setDrawerTitle(t('projectAssistantCreateTitle'))
         setAssistantId('')
         setSystemPromptTemplate([''])
         setSelectedPluginGroup([])
