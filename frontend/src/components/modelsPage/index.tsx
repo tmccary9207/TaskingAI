@@ -339,7 +339,7 @@ function ModelsPage() {
     return (
         <div className={styles["models-page"]}>
             <Spin spinning={loading} wrapperClassName={styles.spinloading}>
-                <ModalTable title='New model' updatePrevButton={updatePrevButton} onChildEvent={handleChildEvent} name="model" hasMore={hasMore} id='model_id' columns={columns} ifSelect={false} onOpenDrawer={handleCreateModel} dataSource={modelList} />
+                <ModalTable title={t('projectNewModel')} updatePrevButton={updatePrevButton} onChildEvent={handleChildEvent} name="model" hasMore={hasMore} id='model_id' columns={columns} ifSelect={false} onOpenDrawer={handleCreateModel} dataSource={modelList} />
             </Spin>
             <ModelModal getOptionsList={fetchData1} ref={childRef} open={modelOne} handleSetModelOne={handleModalCancel} handleSetModelConfirmOne={handleSetModelConfirmOne}></ModelModal>
 

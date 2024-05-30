@@ -367,5 +367,7 @@
     "comingSoon": "Coming Soon",
     "previousButton": "Previous",
     "nextButton": "Next",
-    "searchButton": "Search"
+    "searchButton": "Search",
+    "projectPluginNew": "New plugin",
+    "projectAssistantNew": "New assistant"
 }

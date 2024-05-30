@@ -376,7 +376,7 @@ function Plugins() {
     return (
         <div className={styles["actions"]}>
             <Spin spinning={loading} wrapperClassName={styles.spinloading}>
-                <ModalTable loading={loading} title='New plugin' updatePrevButton={updatePrevButton} name='plugin' id='bundle_id' hasMore={hasMore} ifSelect={false} columns={columns} dataSource={pluginFunList} onChildEvent={handleChildEvent} onOpenDrawer={handleCreatePrompt} />
+                <ModalTable loading={loading} title={t('projectPluginNew')} updatePrevButton={updatePrevButton} name='plugin' id='bundle_id' hasMore={hasMore} ifSelect={false} columns={columns} dataSource={pluginFunList} onChildEvent={handleChildEvent} onOpenDrawer={handleCreatePrompt} />
             </Spin>
             <CreatePlugin handleConfirmRequest={handleConfirmRequest} open={openCreateModal1} handleCloseModal={handleClosePluginModal}></CreatePlugin>
    

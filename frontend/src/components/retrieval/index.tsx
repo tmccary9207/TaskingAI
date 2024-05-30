@@ -366,7 +366,7 @@ function Retrieval() {
 
         <div className={styles["retrieval"]}>
             <Spin spinning={loading} wrapperClassName={styles.spinloading}>
-                <ModalTable loading={loading} title='New collection' updatePrevButton={updateRetrievalPrevButton} onChildEvent={handleChildEvent} name="collection" hasMore={hasMore} id='collection_id' columns={columns} ifSelect={false} onOpenDrawer={handleCreatePrompt} dataSource={promptList} />
+                <ModalTable loading={loading} title={t('projectRetrievalNew')} updatePrevButton={updateRetrievalPrevButton} onChildEvent={handleChildEvent} name="collection" hasMore={hasMore} id='collection_id' columns={columns} ifSelect={false} onOpenDrawer={handleCreatePrompt} dataSource={promptList} />
             </Spin>
             <Drawer className={styles['drawer-retrievals']} closeIcon={<img src={closeIcon} alt="closeIcon" className={styles['img-icon-close']} />} onClose={handleCancel} title={drawerTitle} placement="right" open={OpenDrawer} size='large' footer={<ModalFooterEnd handleOk={() => handleRequest()} onCancel={handleCancel} />}>
                 <div className={styles['drawer-retrieval']}>
@@ -445,7 +445,7 @@ function Retrieval() {
                     </div>
                 </div>
             ]} title={t('projectSelectModel')} open={modalTableOpen} width={1000} className={`modal-inner-table ${styles['retrieval-model']}`}>
-                <ModalTable name="model" title='New model' loading={false} onOpenDrawer={handleCreateModelId} updatePrevButton={updatePrevButton} defaultSelectedRowKeys={defaultSelectedRowKeys} handleRecordsSelected={handleRecordsSelected} ifSelect={true} columns={modelsTableColumn} hasMore={modelHasMore} id='model_id' dataSource={options} onChildEvent={handleChildModelEvent}></ModalTable>
+                <ModalTable name="model" title={t('projectNewModel')} loading={false} onOpenDrawer={handleCreateModelId} updatePrevButton={updatePrevButton} defaultSelectedRowKeys={defaultSelectedRowKeys} handleRecordsSelected={handleRecordsSelected} ifSelect={true} columns={modelsTableColumn} hasMore={modelHasMore} id='model_id' dataSource={options} onChildEvent={handleChildModelEvent}></ModalTable>
             </Modal>
             <ViewCode open={viewCodeOpen} data={viewCodeData} handleClose={handleCloseViewCode} />
             <DeleteModal describe={`${t('deleteItem')} ${deleteValue || 'Untitled Collection'}? ${t('projectRetrievalDeleteDesc')}`} open={OpenDeleteModal} title={t('projectRetrievalDelete')} projectName={deleteValue || 'Untitled Collection'} onDeleteCancel={onDeleteCancel} onDeleteConfirm={onDeleteConfirm} />

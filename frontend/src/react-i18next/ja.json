@@ -367,5 +367,7 @@
     "comingSoon": "近刊",
     "previousButton": "前へ",
     "nextButton": "次へ",
-    "searchButton": "検索"
+    "searchButton": "検索",
+    "projectPluginNew": "新規プラグイン",
+    "projectAssistantNew": "新規アシスタント"
 }
