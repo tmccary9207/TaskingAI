@@ -386,5 +386,9 @@
     "seeTheDocumentation": "See the documentation to learn more.",
     "maxBatchSizeLabel": "Max batch size",
     "maxBatchSizeDesc": "The maximum number of text chunks that a provider's API can process in one call. Default value is 512.",
-    "maxBatchSizePlaceholder": "Enter batch size"
+    "maxBatchSizePlaceholder": "Enter batch size",
+    "descriptionTitle": "Description",
+    "pluginTitle": "Plugins",
+    "projectModelColumnPlugins": "Plugins",
+    "enterIDPlaceholder": "Enter ID"
 }

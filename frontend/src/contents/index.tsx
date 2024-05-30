@@ -144,7 +144,7 @@ function CommonComponents() {
             ),
         },
         {
-            title: 'Plugins',
+            title: `${t('projectModelColumnPlugins')}`,
             dataIndex: 'plugins',
             key: 'plugins',
             width: 360,

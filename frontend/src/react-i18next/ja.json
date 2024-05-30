@@ -386,5 +386,9 @@
     "seeTheDocumentation": "仕様を見る。",
     "maxBatchSizeLabel": "マックスバッチサイズ",
     "maxBatchSizeDesc": "サービスAPIの1つコールに対応するのマックステキストチャンクカウントです。標準は512です。",
-    "maxBatchSizePlaceholder": "バッチサイズを入力"
+    "maxBatchSizePlaceholder": "バッチサイズを入力",
+    "descriptionTitle": "記述",
+    "pluginTitle": "プラグイン",
+    "bundleTablePluginsTitle": "プラグイン",
+    "enterIDPlaceholder": "Enter ID"
 }

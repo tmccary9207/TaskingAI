@@ -98,7 +98,7 @@ function PluginComponent(props: any) {
                         label: 'ID',
                     }
                 ]} className={styles['select-name']} />
-                <Input placeholder='Enter ID' className={styles['input-name']} onChange={handleInputChange} value={inputValue} />
+                <Input placeholder={t('enterIDPlaceholder')} className={styles['input-name']} onChange={handleInputChange} value={inputValue} />
                 <Button className='cancel-button' onClick={handleSearch}>{t('searchButton')}</Button>
                 <Select defaultValue="All Records" onChange={handleSelectEndChange} options={optionsEnd} className={styles['select-data']} />
 

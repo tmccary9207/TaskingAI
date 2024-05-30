@@ -271,11 +271,11 @@ function CreatePlugin(props: any) {
                             <div className={styles.googleWebSearch1}>{bundleName}</div>
                         </div>
                         <div className={styles['description-bundle']}>
-                            <div className={styles['desc-title']}>Description</div>
+                            <div className={styles['desc-title']}>{t('descriptionTitle')}</div>
                             <div className={styles['description-detail']}>{description}</div>
                         </div>
                         <div className={styles['description-bundle']}>
-                            <div className={styles['desc-title']}>Plugins</div>
+                            <div className={styles['desc-title']}>{t('pluginTitle')}</div>
                             {
                                 pluginListData.map((item: any, index) => (
                                     <div className={styles.pluginContent} key={index}>

@@ -142,10 +142,10 @@ function ModalTable({ columns, ifAllowNew,title, hangleFilterData,isShowNewCreat
         if (selectedValue === 'name_search') {
             setEnterPlaceHolder('Enter Name')
         } else {
-            setEnterPlaceHolder('Enter ID')
+            setEnterPlaceHolder(t('enterIDPlaceholder'))
         }
         if (ifOnlyId) {
-            setEnterPlaceHolder('Enter ID')
+            setEnterPlaceHolder(t('enterIDPlaceholder'))
         }
     }, [selectedValue, ifOnlyId, enterPlaceHolder])
     useEffect(() => {

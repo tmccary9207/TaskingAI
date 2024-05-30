@@ -144,7 +144,7 @@ function ModalSelect(prop: any) {
                             label: 'ID',
                         }
                     ]} className={'select-name'} />
-                    <Input placeholder='Enter ID' className={'input-name'} onChange={handleInputChange} value={inputValue} />
+                    <Input placeholder={t('enterIDPlaceholder')} className={'input-name'} onChange={handleInputChange} value={inputValue} />
                     <Button className='cancel-button' onClick={handleSearch}>{t('searchButton')}</Button>
                     <Select defaultValue="All Records" onChange={handleSelectEndChange} options={optionsEnd} className={'select-data'} />
 
