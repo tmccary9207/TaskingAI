@@ -364,5 +364,7 @@
     "dashboardAboutAuth": "認証について",
     "dashboardClientLibraries": "クライエントライブラリー",
     "dashboardClientLibrariesBlurb": "プロジェクトを始めるためにクライエントライブラリーを選択する。",
-    "comingSoon": "近刊"
+    "comingSoon": "近刊",
+    "previousButton": "前へ",
+    "nextButton": "次へ"
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './pagination.module.scss'
 import { Button,  } from 'antd';
+import { useTranslation } from 'react-i18next';
 function Paginations(props:any) {
     const { onFetchData, hasMore, } = props
     const [previousButtonDisabled, setPreviousButtonDisabled] = useState(true)
@@ -9,6 +10,7 @@ function Paginations(props:any) {
     const [nextFlag, setNextFlag] = useState(false)
     const [offset, setOffset] = useState(0)
     const [isFirstRender, setIsFirstRender] = useState(true)
+    const { t } = useTranslation()
     useEffect(() => {
         if (isFirstRender && hasMore) {
             setNextButtonDisabled(false)
@@ -67,8 +69,8 @@ function Paginations(props:any) {
     }
     return (
         <div className={styles.footer}>
-            <Button className={styles['previous-button']} style={{ borderRight: 'none' }} onClick={handlePrevious} disabled={previousButtonDisabled}>Previous</Button>
-            <Button className={styles['next-button-group']} onClick={handleNext} disabled={nextButtonDisabled}>Next</Button>
+            <Button className={styles['previous-button']} style={{ borderRight: 'none' }} onClick={handlePrevious} disabled={previousButtonDisabled}>{t('previousButton')}</Button>
+            <Button className={styles['next-button-group']} onClick={handleNext} disabled={nextButtonDisabled}>{t('nextButton')}</Button>
             {/* <Pagination defaultPageSize={10} showQuickJumper={false} showSizeChanger={true} onChange={handleChangePageLimit} /> */}
         </div>
     );

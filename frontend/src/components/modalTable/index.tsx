@@ -1,5 +1,6 @@
 import { Table, Select, Input, Button, Pagination, Empty, ConfigProvider } from 'antd';
 import { useState, useEffect, ChangeEvent } from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './modalTable.module.scss'
 import { PlusOutlined } from '@ant-design/icons';
 import NoApikey from '../../assets/img/NO_APIKEY.svg?react'
@@ -25,6 +26,7 @@ function ModalTable({ columns, ifAllowNew,title, hangleFilterData,isShowNewCreat
         limit: 20,
         sort_field: 'created_timestamp',
     })
+    const { t } = useTranslation();
     const [enterPlaceHolder, setEnterPlaceHolder] = useState('Enter Name')
     const empty: Record<string, any> = {
         ['API Key']: <NoApikey style={{ width: '158px', height: '100px' }} />,
@@ -445,8 +447,8 @@ function ModalTable({ columns, ifAllowNew,title, hangleFilterData,isShowNewCreat
                 </ConfigProvider>
                 {!ifHideFooter && (
                     <div className={`${styles.footer} ${ifSelect ? styles['footer-position'] : ''}`}>
-                        <Button className={styles['previous-button']} style={{ borderRight: 'none' }} onClick={handlePrevious} disabled={previousButtonDisabled}>Previous</Button>
-                        <Button className={styles['next-button-group']} onClick={handleNext} disabled={nextButtonDisabled}>Next</Button>
+                        <Button className={styles['previous-button']} style={{ borderRight: 'none' }} onClick={handlePrevious} disabled={previousButtonDisabled}>{t('previousButton')}</Button>
+                        <Button className={styles['next-button-group']} onClick={handleNext} disabled={nextButtonDisabled}>{t('nextButton')}</Button>
                         <Pagination defaultPageSize={20} showQuickJumper={false} showSizeChanger={true} onChange={handleChangePageLimit} />
                     </div>
                 )}

@@ -364,5 +364,7 @@
     "dashboardAboutAuth": "About Authentication",
     "dashboardClientLibraries": "Client libraries",
     "dashboardClientLibrariesBlurb": "Choose your preferred client library to start your project.",
-    "comingSoon": "Coming Soon"
+    "comingSoon": "Coming Soon",
+    "previousButton": "Previous",
+    "nextButton": "Next"
 }
