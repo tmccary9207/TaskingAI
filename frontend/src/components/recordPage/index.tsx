@@ -260,7 +260,7 @@ function RecordPage({ collectionId }: { collectionId: string }) {
                 <div className={styles['text-content']}>
                     <div className={styles['text-title']}>{t('title')}</div>
                     <div className={styles.desc}>{t('projectRecordTitleDesc')}</div>
-                    <Input className={styles['input1']} placeholder='Enter name' value={title} onChange={(e) => setTitle(e.target.value)}></Input>
+                    <Input className={styles['input1']} placeholder={t('enterNamePlaceholder')} value={title} onChange={(e) => setTitle(e.target.value)}></Input>
                     <div className={styles['text-title']}>{t('projectChunkTextContent')}</div>
                     <div className={styles['desc']}>{t('projectRecordContentDesc')}</div>
                     <Input.TextArea placeholder={t('projectRecordEnterDescription')} showCount minLength={0} maxLength={32768} value={contentValue} onChange={handleContentChange} className={styles['input']}></Input.TextArea>

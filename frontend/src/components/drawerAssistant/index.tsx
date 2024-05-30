@@ -277,7 +277,7 @@ const DrawerAssistant = forwardRef((props: any, ref: any) => {
                 <div className='name-prompt'>
                     {t('projectModelColumnName')}
                 </div>
-                <Input value={drawerName} onChange={handleChangeNames} className='input' placeholder='Enter name'></Input>
+                <Input value={drawerName} onChange={handleChangeNames} className='input' placeholder={t('enterNamePlaceholder')}></Input>
                 <div className='label'>
                     {t('projectAssistantsColumnDescription')}
                 </div>

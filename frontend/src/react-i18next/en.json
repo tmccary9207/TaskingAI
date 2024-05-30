@@ -390,5 +390,7 @@
     "descriptionTitle": "Description",
     "pluginTitle": "Plugins",
     "projectModelColumnPlugins": "Plugins",
-    "enterIDPlaceholder": "Enter ID"
+    "enterIDPlaceholder": "Enter ID",
+    "enterNamePlaceholder": "Enter name",
+    "enterNameRequiredMessage": "please enter name"
 }

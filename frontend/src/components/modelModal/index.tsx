@@ -444,7 +444,7 @@ const ModelModal = react.forwardRef((props: modelModalProps, ref) => {
                             <Form.Item rules={[
                                 {
                                     required: true,
-                                    message: 'please enter name',
+                                    message: t('enterNameRequiredMessage'),
                                 },
                             ]} label={t('projectModelCreateModelName')} name="name" >
                                 <div>

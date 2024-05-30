@@ -390,5 +390,7 @@
     "descriptionTitle": "記述",
     "pluginTitle": "プラグイン",
     "bundleTablePluginsTitle": "プラグイン",
-    "enterIDPlaceholder": "Enter ID"
+    "enterIDPlaceholder": "Enter ID",
+    "enterNamePlaceholder": "名を入力",
+    "enterNameRequiredMessage": "名を入力してください"
 }

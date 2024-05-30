@@ -96,7 +96,7 @@ function Retrieval() {
     const [modalTableOpen, setModalTableOpen] = useState(false)
     const [OpenDeleteModal, setOpenDeleteModal] = useState(false)
     const [recordOpen, setRecordOpen] = useState(false)
-    const [drawerTitle, setDrawerTitle] = useState('Create Collection')
+    const [drawerTitle, setDrawerTitle] = useState(t('projectRetrievalCreateTitle'))
     const [drawerName, setDrawerName] = useState<any>('')
     const [embeddingSize, setEmbeddingSize] = useState(0)
     const [deleteValue, setDeleteValue] = useState('')
@@ -206,7 +206,7 @@ function Retrieval() {
         }
     }
     const handleCreatePrompt = () => {
-        setDrawerTitle('Create Collection')
+        setDrawerTitle(t('projectRetrievalCreateTitle'))
         setDrawerName(undefined)
         setCollectionId('')
         setRecordsSelected([])
@@ -373,7 +373,7 @@ function Retrieval() {
                     <div className={styles['name-prompt']}>
                         {t('projectModelColumnName')}
                     </div>
-                    <Input className={styles['input']} placeholder='Enter name' value={drawerName} onChange={handleNameChange}></Input>
+                    <Input className={styles['input']} placeholder={t('enterNamePlaceholder')} value={drawerName} onChange={handleNameChange}></Input>
                     <div className={styles['desc-prompt']}>
                         {t('projectAssistantsColumnDescription')}
                     </div>

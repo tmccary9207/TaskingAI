@@ -27,7 +27,7 @@ function ModalTable({ columns, ifAllowNew,title, hangleFilterData,isShowNewCreat
         sort_field: 'created_timestamp',
     })
     const { t } = useTranslation();
-    const [enterPlaceHolder, setEnterPlaceHolder] = useState('Enter Name')
+    const [enterPlaceHolder, setEnterPlaceHolder] = useState(t('enterNamePlaceholder'))
     const empty: Record<string, any> = {
         ['API Key']: <NoApikey style={{ width: '158px', height: '100px' }} />,
         assistant: <NoAssistant style={{ width: '158px', height: '100px' }} />,
@@ -140,7 +140,7 @@ function ModalTable({ columns, ifAllowNew,title, hangleFilterData,isShowNewCreat
     }, [flagPrev])
     useEffect(() => {
         if (selectedValue === 'name_search') {
-            setEnterPlaceHolder('Enter Name')
+            setEnterPlaceHolder(t('enterNamePlaceholder'))
         } else {
             setEnterPlaceHolder(t('enterIDPlaceholder'))
         }
