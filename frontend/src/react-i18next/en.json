@@ -369,5 +369,22 @@
     "nextButton": "Next",
     "searchButton": "Search",
     "projectPluginNew": "New plugin",
-    "projectAssistantNew": "New assistant"
+    "projectAssistantNew": "New assistant",
+    "availableModelTypes": "Available Model Types",
+    "providerModelIdPlaceholder": "Enter provider model ID",
+    "providerModelIdLabel": "Provider model ID",
+    "providerModelIdRequiredMessage": "please enter provider model ID",
+    "modelTypeLabel": "Model type",
+    "modelTypePlaceholder": "Select model type",
+    "modelTypeTextEmbeddingLabel": "Text Embedding",
+    "modelTypeChatCompletionLabel": "Chat Completion",
+    "functionCallLabel": "Function Call",
+    "streamingLabel": "Streaming",
+    "outputMaxTokensLabel": "Output max tokens",
+    "weWillCheckCredentialsBlurb": "We will send one token to the model provider to verify the validity of your credentials. All credentials are encrypted at rest with AES-256 and in transit with TLS 1.2.",
+    "havingTroubleModel": "Having trouble configuring the model?",
+    "seeTheDocumentation": "See the documentation to learn more.",
+    "maxBatchSizeLabel": "Max batch size",
+    "maxBatchSizeDesc": "The maximum number of text chunks that a provider's API can process in one call. Default value is 512.",
+    "maxBatchSizePlaceholder": "Enter batch size"
 }

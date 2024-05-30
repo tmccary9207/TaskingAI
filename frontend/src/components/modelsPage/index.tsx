@@ -379,10 +379,10 @@ function ModelsPage() {
                                 {modelType === 'wildcard' && <Form.Item rules={[
                                     {
                                         required: true,
-                                        message: 'please enter provider model ID',
+                                        message: `${t('providerModelIdRequiredMessage')}`,
                                     },
-                                ]} label='Provider model ID' name="provider_model_id">
-                                    <Input className={styles['input-name']} placeholder='Enter provider model ID' />
+                                ]} label={t('providerModelIdLabel')} name="provider_model_id">
+                                    <Input className={styles['input-name']} placeholder={t('providerModelIdPlaceholder')} />
                                 </Form.Item>}
                             </Form>
                         </ConfigProvider>
@@ -398,12 +398,12 @@ function ModelsPage() {
                                     }
                                 }}>
                                     <Form layout="vertical" className={styles['second-form']} form={wildcardForm}>
-                                        <Form.Item label='Model type' required>
-                                            <Select placeholder='Select model type' options={[{
-                                                label: 'Text Embedding',
+                                        <Form.Item label={t('modelTypeLabel')} required>
+                                            <Select placeholder={t('modelTypePlaceholder')} options={[{
+                                                label: `${t('modelTypeTextEmbeddingLabel')}`,
                                                 value: 'text_embedding'
                                             }, {
-                                                label: 'Chat Completion',
+                                                label: `${t('modelTypeChatCompletionLabel')}`,
                                                 value: 'chat_completion'
                                             }
                                             ]} onChange={handleModelTypes} value={type}>
@@ -433,16 +433,16 @@ function ModelsPage() {
                                                     <InputNumber  parser={(value: any) => (isNaN(value) ? '' : parseInt(value, 10))} style={{ width: '100%' }} placeholder={t('projectModelInputMaxTokensPlaceholder')} />
                                                 </Form.Item>
                                             </Form.Item>
-                                            <Form.Item label={'Max batch size'} name='max_batch_size'>
-                                            <div className={styles['description']}>The maximum number of text chunks that a provider's API can process in one call. Default value is 512.</div>
+                                            <Form.Item label={t('maxBatchSizeLabel')} name='max_batch_size'>
+                                            <div className={styles['description']}>{t('maxBatchSizeDesc')}</div>
 
                                                 <Form.Item  name='max_batch_size'>
-                                                    <InputNumber  parser={(value: any) => (isNaN(value) ? '' : parseInt(value, 10))} style={{ width: '100%' }} placeholder={'Enter batch size'} />
+                                                    <InputNumber  parser={(value: any) => (isNaN(value) ? '' : parseInt(value, 10))} style={{ width: '100%' }} placeholder={t('maxBatchSizePlaceholder')} />
                                                 </Form.Item>
                                             </Form.Item>
                                         </>}
                                         {type === 'chat_completion' && <>
-                                            <Form.Item label="Function call" required name='function_call' valuePropName="checked">
+                                            <Form.Item label={t('functionCallLabel')} required name='function_call' valuePropName="checked">
                                                 <div className={styles['description']}>{t('projectModelPropertiesDesc')}</div>
                                                 <ConfigProvider theme={{
                                                     components: {
@@ -457,7 +457,7 @@ function ModelsPage() {
                                                     </Form.Item>
                                                 </ConfigProvider>
                                             </Form.Item>
-                                            <Form.Item label="Streaming" required name='streaming' valuePropName="checked">
+                                            <Form.Item label={t('streamingLabel')} required name='streaming' valuePropName="checked">
                                                 <div className={styles['description']}>{t('projectModelStreamingDesc')}</div>
                                                 <ConfigProvider theme={{
                                                     components: {
@@ -478,7 +478,7 @@ function ModelsPage() {
                                                     <InputNumber  parser={(value: any) => (isNaN(value) ? '' : parseInt(value, 10))} style={{ width: '100%' }} placeholder={t('projectModelInputMaxTokensPlaceholder')} />
                                                 </Form.Item>
                                             </Form.Item>
-                                            <Form.Item label="Output max tokens" name='output_token_limit'>
+                                            <Form.Item label={t('outputMaxTokensLabel')} name='output_token_limit'>
                                             <div className={styles['description']}>{t('projectModelOutputMaxTokensDesc')}</div>
                                                 <Form.Item name='output_token_limit'>
                                                     <InputNumber  style={{ width: '100%' }} parser={(value: any) => (isNaN(value) ? '' : parseInt(value, 10))} placeholder={t('projectModelOutputMaxTokensPlaceholder')} />
@@ -497,7 +497,7 @@ function ModelsPage() {
                                 </>}
 
                                 {modelType === 'chat_completion' && <Form layout="vertical" className='second-form' form={propertyForm}>
-                                    <Form.Item label="Function call" required name='function_call' valuePropName="checked">
+                                    <Form.Item label={t('functionCallLabel')} required name='function_call' valuePropName="checked">
                                         <div className={styles['description']}>{t('projectModelPropertiesDesc')}</div>
                                         <ConfigProvider theme={{
                                             components: {
@@ -512,7 +512,7 @@ function ModelsPage() {
                                             </Form.Item>
                                         </ConfigProvider>
                                     </Form.Item>
-                                    <Form.Item label="Streaming" required name='streaming' valuePropName="checked">
+                                    <Form.Item label={t('streamingLabel')} required name='streaming' valuePropName="checked">
                                         <div className={styles['description']}>{t('projectModelStreamingDesc')}</div>
                                         <ConfigProvider theme={{
                                             components: {
@@ -534,7 +534,7 @@ function ModelsPage() {
                                             <InputNumber  parser={(value: any) => (isNaN(value) ? '' : parseInt(value, 10))} style={{ width: '100%' }} placeholder={t('projectModelInputMaxTokensPlaceholder')} />
                                         </Form.Item>
                                     </Form.Item>
-                                    <Form.Item label="Output max tokens" name='output_token_limit'>
+                                    <Form.Item label={t('outputMaxTokensLabel')} name='output_token_limit'>
                                     <div className={styles['description']}>{t('projectModelOutputMaxTokensDesc')}</div>
                                         <Form.Item name='output_token_limit'>
                                             <InputNumber  parser={(value: any) => (isNaN(value) ? '' : parseInt(value, 10))} placeholder={t('projectModelOutputMaxTokensPlaceholder')} />

@@ -369,5 +369,22 @@
     "nextButton": "次へ",
     "searchButton": "検索",
     "projectPluginNew": "新規プラグイン",
-    "projectAssistantNew": "新規アシスタント"
+    "projectAssistantNew": "新規アシスタント",
+    "availableModelTypes": "利用可能モデルタイプ",
+    "providerModelIdPlaceholder": "サービスモデルIDを入力",
+    "providerModelIdLabel": "サービスモデルID",
+    "providerModelIdRequiredMessage": "サービスモデルIDを入力してください",
+    "modelTypeLabel": "モデルタイプ",
+    "modelTypePlaceholder": "モデルタイプを選択",
+    "modelTypeTextEmbeddingLabel": "テキストエンベディング",
+    "modelTypeChatCompletionLabel": "チャットコンプリション",
+    "functionCallLabel": "関数コール",
+    "streamingLabel": "ストリーミング",
+    "outputMaxTokensLabel": "アウトプットのマックストークン",
+    "weWillCheckCredentialsBlurb": "認証を確認するためにサービスに1トークンリクエストを送信する。保存された認証はAES-256で暗号化している、そして送信する時にTLS 1.2を使います。",
+    "havingTroubleModel": "モデル設定に問題ありますか？",
+    "seeTheDocumentation": "仕様を見る。",
+    "maxBatchSizeLabel": "マックスバッチサイズ",
+    "maxBatchSizeDesc": "サービスAPIの1つコールに対応するのマックステキストチャンクカウントです。標準は512です。",
+    "maxBatchSizePlaceholder": "バッチサイズを入力"
 }

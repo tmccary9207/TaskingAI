@@ -418,7 +418,7 @@ const DrawerAssistant = forwardRef((props: any, ref: any) => {
                             options={[
                                 {
                                     value: 'function_call',
-                                    label: 'Function Call',
+                                    label: t('functionCallLabel'),
                                 },
                                 {
                                     value: 'user_message',
